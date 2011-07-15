@@ -35,7 +35,7 @@
 
 /* struct buf • character array buffer */
 struct buf {
-	char *	data;	/* actual character data */
+	unsigned char *	data;	/* actual character data */
 	size_t	size;	/* size of the string */
 	size_t	asize;	/* allocated size (0 = volatile buffer) */
 	size_t	unit;	/* reallocation unit size (0 = read-only buffer) */

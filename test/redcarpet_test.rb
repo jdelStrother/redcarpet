@@ -51,6 +51,12 @@ class RedcarpetTest < Test::Unit::TestCase
       output = Redcarpet.new(input).to_html
       assert_equal input.encoding.name, output.encoding.name
     end
+    def test_should_manage_interesting_characters
+      input = "ழ"
+      output = Redcarpet.new(input).to_html
+      assert output.valid_encoding?
+      assert_equal "<p>ழ</p>\n", output
+    end
   end
 
   def test_that_no_image_flag_works
